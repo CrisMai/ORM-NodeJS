@@ -43,8 +43,8 @@ class PessoaController {
 
         try {
             await database.Pessoas.update(novasInfos, {where: {id: Number(id) }});
-            const pessoaAtualizada = await database.Pessoas.findOne({wherer: {id: Number(id) }});
-            return res.status(200).json(pessoaAtualizada);
+            const PessoaAtualizada = await database.Pessoas.findOne({wherer: {id: Number(id) }});
+            return res.status(200).json(PessoaAtualizada);
         }
         catch(error) {
             return res.status(500).json(error.message);
@@ -89,6 +89,26 @@ class PessoaController {
             return res.status(500).json(error.message);
         }
     }
+
+    static async atualizaMatricula(req, res) {
+        const {estudanteId, matriculaId} = req.params;
+        const {id} = req.params;
+        const novasInfos = req.body;
+
+        try {
+            await database.Matriculas.update(novasInfos, {
+                where: {
+                    id: Number(matriculaId),
+                    estudante_id: Number(estudanteId)
+                }});
+            const MatriculaAtualizada = await database.Matriculas.findOne({wherer: {id: Number(matriculaId) }});
+            return res.status(200).json(MatriculaAtualizada);
+        }
+        catch(error) {
+            return res.status(500).json(error.message);
+        }
+    }
+
 
 }
 
