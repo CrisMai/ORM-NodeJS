@@ -31,3 +31,18 @@ O controlador é responsável por gerenciar a comunicação entre o modelo e a v
 entradas do usuário e coordenando as ações necessárias para atualizar o modelo e a visão de 
 acordo com as interações do usuário.
 O padrão de arquitetura MVC é amplamente utilizado em sistemas de software, especialmente em aplicações web e desktop.
+
+
+------ Associações com o Sequelize: Para definir as associações entre colunas usando o Sequelize, é 
+necessário configurar os modelos que representam as tabelas do banco de dados e definir as relações 
+entre eles. Existem quatro tipos principais de associações que podem ser definidas com o Sequelize:
+
+1- BelongsTo: define uma associação de pertencimento entre dois modelos, em que um modelo "pertence" a 
+outro modelo por meio de uma chave estrangeira. 
+2- HasOne: define uma associação em que um modelo possui um único registro relacionado em outro modelo.
+3- HasMany: define uma associação em que um modelo pode ter vários registros relacionados em outro modelo. 
+4- BelongsToMany: define uma associação muitos-para-muitos entre dois modelos por meio de uma tabela de associação intermediária.
+
+As associações definidas com o Sequelize permitem que sejam criadas queries mais complexas e que 
+as operações CRUD sejam executadas de forma mais eficiente, além de facilitar a criação de relacionamentos 
+entre as tabelas do banco de dados.
