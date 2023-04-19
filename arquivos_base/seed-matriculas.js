@@ -1,4 +1,5 @@
 module.exports = {
+
   up: (queryInterface, Sequelize) => {
 		return queryInterface.bulkInsert('Matriculas', [
 			{
@@ -49,4 +50,5 @@ module.exports = {
   down: (queryInterface, Sequelize) => {
 		return queryInterface.bulkDelete('Matriculas', null, {})
   }
+  
 }
