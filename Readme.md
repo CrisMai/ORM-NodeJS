@@ -46,3 +46,10 @@ outro modelo por meio de uma chave estrangeira.
 As associações definidas com o Sequelize permitem que sejam criadas queries mais complexas e que 
 as operações CRUD sejam executadas de forma mais eficiente, além de facilitar a criação de relacionamentos 
 entre as tabelas do banco de dados.
+
+
+------- Escopos: Existem diversos tipos de escopo, em JavaScript, por exemplo, podemos definir o escopo 
+de uma variável - escopo global, de uma função, etc. O escopo é como chamamos as regras que definem quão 
+acessível ou “visível” uma informação está, dependendo da parte da aplicação. 
+Um escopo pode ter identificadores, alguma instrução de código ou algoritmo. No caso do Sequelize, podemos 
+determinar o escopo padrão (defaultScope) que justamente define quais restrições e definições serão utilizadas na query.
