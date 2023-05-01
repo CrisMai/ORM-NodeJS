@@ -6,7 +6,7 @@ class Services {
     }
 
     async pegaTodosOsRegistros() {
-        return database[this.nomeDoModelo].findAll();
+        return database[this.nomeDoModelo].findAll({where: {...where}});
     }
 
     async atualizaRegistro(dadosAtualizados, id, transacao = {}) {
@@ -17,6 +17,17 @@ class Services {
     async atualizaRegistros(dadosAtualizados, where, transacao = {}) {
         return database[this.nomeDoModelo]
             .update(dadosAtualizados, {where: {...where}}, transacao)
+    }
+
+    async consultaRegistroApagado(id) {
+        return database[this.nomeDoModelo].findOne({
+            paranoid: false, where: {id: Number(id)}
+        })
+    }
+
+    async encontraEContaRegistros(where = {}, agregadores) {
+        return database[this.nomeDoModelo].findAndCountAll(
+            {where: {...where}, ...agregadores})
     }
 }
 
